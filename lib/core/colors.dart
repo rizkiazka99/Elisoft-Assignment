@@ -5,6 +5,7 @@ const secondaryColor = Color(0xFFBDD7D9);
 
 dynamic warningColor = Colors.yellow[700];
 dynamic successColor = Colors.green;
+const skeletonBarColor = Color.fromARGB(255, 209, 208, 208);
 //contextual color
 const contextOrange = Color(0xFFFF6E30);
 const contextYellow = Color(0xFFFBBC05);

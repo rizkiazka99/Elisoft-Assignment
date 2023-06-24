@@ -22,14 +22,15 @@ class MyApp extends StatelessWidget {
     );
 
     return GetMaterialApp(
-      title: 'Elisoft Assignment',
+      debugShowCheckedModeBanner: false,
+      title: 'Elisoft Technical Assignment',
       theme: ThemeData(
         //colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         colorSchemeSeed: primaryColor,
         useMaterial3: true,
       ),
       getPages: AppPages.pages,
-      initialRoute: loginScreenRoute,
+      initialRoute: homeScreenRoute,
     );
   }
 }

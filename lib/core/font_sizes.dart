@@ -27,8 +27,8 @@ h2({color = textBlack, fontFamily}) {
   return TextStyle(color: color, fontWeight: FontWeight.bold, fontSize: 28, fontFamily: fontFamily);
 }
 
-h3({color = textBlack, fontFamily}) {
-  return TextStyle(color: color, fontWeight: FontWeight.bold, fontSize: 24, fontFamily: fontFamily);
+h3({color = textBlack, fontWeight = FontWeight.bold, fontFamily}) {
+  return TextStyle(color: color, fontWeight: fontWeight, fontSize: 24, fontFamily: fontFamily);
 }
 
 h4({color = textBlack, fontWeight = FontWeight.bold, fontFamily}) {
