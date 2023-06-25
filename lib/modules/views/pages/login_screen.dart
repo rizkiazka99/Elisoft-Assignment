@@ -8,10 +8,8 @@ import 'package:elisoft_techincal_assignment/modules/controllers/auth/obscure_pa
 import 'package:elisoft_techincal_assignment/modules/views/widgets/authentication_form.dart';
 import 'package:elisoft_techincal_assignment/modules/views/widgets/default_button.dart';
 import 'package:elisoft_techincal_assignment/modules/views/widgets/default_snackbar.dart';
-import 'package:elisoft_techincal_assignment/router/route_variables.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:get/get.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
@@ -39,9 +37,6 @@ class _LoginScreenState extends State<LoginScreen> {
                 builder: (context, state) {
                   if (state is ErrorState) {
                     defaultSnackbar('Oops!', 'Login failed, please try again');
-                    return const SizedBox.shrink();
-                  } else if (state is SuccessState) {
-                    Get.offAllNamed(loginScreenRoute);
                     return const SizedBox.shrink();
                   } else {
                     return SingleChildScrollView(
