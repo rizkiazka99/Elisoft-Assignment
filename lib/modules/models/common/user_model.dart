@@ -4,14 +4,14 @@ class User {
     String name;
     String email;
     String phoneNumber;
-    Created created;
+    Created? created;
     String uuid;
 
     User({
         required this.name,
         required this.email,
         required this.phoneNumber,
-        required this.created,
+        this.created,
         required this.uuid,
     });
 
@@ -27,7 +27,7 @@ class User {
         "name": name,
         "email": email,
         "phone_number": phoneNumber,
-        "created": created.toJson(),
+        "created": created!.toJson(),
         "uuid": uuid,
     };
 }

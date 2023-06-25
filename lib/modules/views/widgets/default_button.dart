@@ -4,11 +4,13 @@ import 'package:flutter/material.dart';
 
 class DefaultButton extends StatelessWidget {
   final void Function()? onTap;
+  final Color? buttonColor;
   final String buttonText;
 
   const DefaultButton({
     super.key, 
-    required this.onTap, 
+    required this.onTap,
+    this.buttonColor = primaryColor,
     required this.buttonText
   });
 
@@ -18,15 +20,12 @@ class DefaultButton extends StatelessWidget {
       onTap: onTap,
       child: Material(
         elevation: 7,
-        borderRadius: const BorderRadius.only(
-          bottomLeft: Radius.circular(8),
-          bottomRight: Radius.circular(8)
-        ),
+        borderRadius: BorderRadius.circular(8),
         child: Container(
           width: MediaQuery.of(context).size.width,
           height: 60,
           decoration: BoxDecoration(
-            color: primaryColor,
+            color: buttonColor,
             borderRadius: BorderRadius.circular(8),
             /*boxShadow: const [
               BoxShadow(

@@ -1,4 +1,4 @@
-import 'package:elisoft_techincal_assignment/data/api_endpoints.dart';
+import 'package:elisoft_techincal_assignment/data/api/api_endpoints.dart';
 import 'package:elisoft_techincal_assignment/modules/models/login_response.dart';
 import 'package:elisoft_techincal_assignment/modules/models/article_response.dart';
 

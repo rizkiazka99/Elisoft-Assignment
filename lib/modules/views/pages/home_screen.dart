@@ -2,7 +2,7 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:elisoft_techincal_assignment/core/colors.dart';
 import 'package:elisoft_techincal_assignment/core/font_sizes.dart';
 import 'package:elisoft_techincal_assignment/core/helpers/date_formatter.dart';
-import 'package:elisoft_techincal_assignment/data/repository.dart';
+import 'package:elisoft_techincal_assignment/data/api/repository.dart';
 import 'package:elisoft_techincal_assignment/modules/controllers/content/articles_cubit.dart';
 import 'package:elisoft_techincal_assignment/modules/controllers/content/articles_state.dart';
 import 'package:elisoft_techincal_assignment/modules/views/widgets/article_cards.dart';
@@ -83,7 +83,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                   ),
                                   InkWell(
                                     onTap: () {
-                                      
+                                      context.read<ArticlesCubit>().logout();
                                     }, 
                                     child: const Icon(
                                       Icons.logout,
@@ -112,6 +112,7 @@ class _HomeScreenState extends State<HomeScreen> {
                               children: List.generate(articles.length, (index) {
                                 return ArticleCardVertical(
                                   image: articles[index].image != null || articles[index].image != '' ? CachedNetworkImage(
+                                    fit: BoxFit.cover,
                                     height: MediaQuery.of(context).size.height / 10,
                                     width: MediaQuery.of(context).size.width / 5,
                                     imageUrl: articles[index].image,

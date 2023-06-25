@@ -33,7 +33,7 @@ class MyApp extends StatelessWidget {
         useMaterial3: true,
       ),
       getPages: AppPages.pages,
-      initialRoute: loginScreenRoute,
+      initialRoute: splashScreenRoute,
     );
   }
 }
