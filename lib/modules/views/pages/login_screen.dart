@@ -8,6 +8,7 @@ import 'package:elisoft_techincal_assignment/modules/controllers/auth/obscure_pa
 import 'package:elisoft_techincal_assignment/modules/views/widgets/authentication_form.dart';
 import 'package:elisoft_techincal_assignment/modules/views/widgets/default_button.dart';
 import 'package:elisoft_techincal_assignment/modules/views/widgets/default_snackbar.dart';
+import 'package:email_validator/email_validator.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -54,8 +55,14 @@ class _LoginScreenState extends State<LoginScreen> {
                             autovalidateMode: context.read<LoginCubit>().autoValidateEmail,
                             label: 'E-mail',
                             validator: (value) {
-                              if (value!.isEmpty) {
+                              bool validate = EmailValidator.validate(value!);
+
+                              if (value.isEmpty) {
                                 return 'E-mail field cannot be left empty';
+                              } else {
+                                if (!validate) {
+                                  return 'Invalid e-mail address';
+                                }
                               }
                             },
                           ),
