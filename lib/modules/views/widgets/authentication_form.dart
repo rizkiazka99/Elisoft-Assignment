@@ -16,16 +16,16 @@ class AuthenticationForm extends StatefulWidget {
 
   const AuthenticationForm({
     super.key, 
-    this.formKey, 
-    this.autovalidateMode, 
-    this.controller, 
+    required this.formKey, 
+    required this.autovalidateMode, 
+    required this.controller, 
     this.obscureText = false, 
     this.input = TextInputType.text, 
     this.minLines = 1, 
     this.maxLines = 1, 
     required this.label, 
     this.suffixIcon, 
-    this.validator
+    required this.validator
   });
 
   @override

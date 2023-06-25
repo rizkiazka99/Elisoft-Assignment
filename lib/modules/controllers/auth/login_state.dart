@@ -6,3 +6,13 @@ class InitialState extends LoginState {
   @override
   List<Object> get props => [];
 }
+
+class ErrorState extends LoginState {
+  @override
+  List<Object> get props => [];
+}
+
+class SuccessState extends LoginState {
+  @override
+  List<Object> get props => [];
+}

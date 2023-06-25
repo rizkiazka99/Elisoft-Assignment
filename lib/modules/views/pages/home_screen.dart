@@ -66,19 +66,26 @@ class _HomeScreenState extends State<HomeScreen> {
                               child: Row(
                                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                 children: [
-                                  SizedBox(
-                                    width: MediaQuery.of(context).size.width / 2,
-                                    child: Row(
-                                      children: [
-                                        Text(
-                                          'Welcome, ',
-                                          style: h3(fontWeight: FontWeight.normal),
-                                        ),
-                                        Text(
-                                          'User',
-                                          style: h3(),
-                                        )
-                                      ],
+                                  Expanded(
+                                    child: SizedBox(
+                                      width: MediaQuery.of(context).size.width / 2,
+                                      child: Row(
+                                        children: [
+                                          Text(
+                                            'Welcome, ',
+                                            style: h3(fontWeight: FontWeight.normal),
+                                          ),
+                                          SizedBox(
+                                            width: MediaQuery.of(context).size.width / 3,
+                                            child: Text(
+                                              context.read<ArticlesCubit>().userName!,
+                                              style: h3(),
+                                              maxLines: 1,
+                                              overflow: TextOverflow.ellipsis,
+                                            ),
+                                          )
+                                        ],
+                                      ),
                                     ),
                                   ),
                                   InkWell(
